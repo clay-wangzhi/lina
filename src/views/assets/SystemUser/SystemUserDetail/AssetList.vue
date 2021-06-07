@@ -18,7 +18,7 @@ import QuickActions from '@/components/QuickActions/index'
 import RelationCard from '@/components/RelationCard'
 import AssetRelationCard from '@/components/AssetRelationCard'
 import ListTable from '@/components/ListTable'
-import { ActionsFormatter } from '@/components/ListTable/formatters'
+import { ActionsFormatter } from '@/components/TableFormatters'
 
 export default {
   name: 'AssetList',
@@ -91,15 +91,9 @@ export default {
         ]
       },
       headerActions: {
-        hasLeftActions: true,
         hasBulkDelete: false,
         hasImport: false,
-        hasExport: true,
         hasCreate: false,
-        hasSearch: true,
-        hasMoreActions: false,
-        moreActionsTitle: this.$t('common.More'),
-        moreActionsType: 'primary',
         extraMoreActions: [
           {
             title: this.$t('common.PushSelected'),

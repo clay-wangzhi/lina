@@ -14,8 +14,9 @@
 
 <script>
 import GenericCreateUpdateForm from '@/layout/components/GenericCreateUpdateForm'
-import UserPassword from '@/components/UserPassword'
+import UserPassword from '@/components/FormFields/UserPassword'
 import { IBox } from '@/components'
+import rules from '@/components/DataForm/rules'
 
 export default {
   name: 'PasswordUpdate',
@@ -42,8 +43,8 @@ export default {
         },
         new_password: {
           label: this.$t('users.NewPassword'),
-          component: UserPassword,
-          rules: []
+          rules: [rules.RequiredChange],
+          component: UserPassword
         },
         new_password_again: {
           label: this.$t('users.ConfirmPassword'),
