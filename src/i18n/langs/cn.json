@@ -458,6 +458,14 @@
     "versionRunExecution": "执行历史",
     "Unkown": "未知"
   },
+  "publish": {
+    "CICD": "CI/CD 信息",
+    "GitRepos": "Git 源",
+    "IP": "相关环境 IP 地址",
+    "JenkinsJob": "Jenkins 任务名称",
+    "TestIP": "测试环境 IP",
+    "PreIP": "预发布环境 IP"
+  },
   "perms": {
     "": "",
     "Actions": "权限",
@@ -597,6 +605,11 @@
     "PlatformDetail": "系统平台详情",
     "PlatformList": "平台列表",
     "PlatformUpdate": "更新系统平台",
+    "Publish": "上线管理",
+    "PublishHistoryList": "上线历史",
+    "PublishJenkinsList": "Jenkins 任务管理",
+    "PublishJenkinsCreate": "创建 Jenkins 任务",
+    "PublishTicketList": "上线单列表",
     "RemoteApp": "远程应用",
     "RemoteAppDetail": "远程应用详情",
     "RemoteAppPermission": "远程应用授权",

@@ -37,6 +37,7 @@ import TicketsRoutes from './tickets'
 import AuditsRoutes from './audits'
 import commonRoutes from './common'
 import aclRoutes from './acl'
+import PublishRoutes from './publish'
 
 /**
  * constantRoutes
@@ -167,6 +168,15 @@ export const allRoleRoutes = [
     name: 'Audits',
     meta: { title: i18n.t('route.Audits'), icon: 'history', permissions: [rolec.PERM_AUDIT] },
     children: AuditsRoutes
+  },
+  {
+    path: '/publish/',
+    component: Layout,
+    redirect: '/publish/ticket/',
+    name: 'Publish',
+    alwaysShow: true,
+    meta: { title: i18n.t('route.Publish'), icon: 'connectdevelop' },
+    children: PublishRoutes
   },
   ...requireContext.keys().map(key => requireContext(key).default),
   {
