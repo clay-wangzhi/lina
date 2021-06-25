@@ -615,6 +615,7 @@
     "PublishHistoryList": "上线历史",
     "PublishJenkinsList": "Jenkins 任务管理",
     "PublishJenkinsCreate": "创建 Jenkins 任务",
+    "PublishJenkinsUpdate": "更新 Jenkins 任务",
     "PublishTicketList": "上线单列表",
     "RemoteApp": "远程应用",
     "RemoteAppDetail": "远程应用详情",

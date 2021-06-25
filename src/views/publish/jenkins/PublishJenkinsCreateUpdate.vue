@@ -11,6 +11,9 @@ export default {
   },
   data() {
     return {
+      initial: {
+
+      },
       fields: [
         [this.$t('common.Basic'), ['name']],
         [this.$t('publish.CICD'), ['git_repos', 'jenkins_job']],
@@ -31,40 +34,11 @@ export default {
           label: this.$t('publish.PreIP')
         }
       },
-      url: '/api/v1/publish/jenkins/',
-      getUrl() {
-        const params = this.$route.params
-        let url = `/api/v1/applications/applications/`
-        // let url = `/api/v1/publish/jenkins/`
-        if (params.id) {
-          url = `${url}${params.id}/`
-        }
-        return `${url}`
-      },
-      performSubmit(validValues) {
-        const params = this.$route.params
-        const baseUrl = `/api/v1/applications/applications/`
-        // const baseUrl = `/api/v1/publish/jenkins/`
-        const url = (params.id) ? `${baseUrl}${params.id}/` : baseUrl
-        const method = this.getMethod()
-        validValues.category = 'cloud'
-        return this.$axios[method](`${url}?type=${validValues.type}`, validValues)
-      }
-    }
-  },
-  computed: {
-    getMethod() {
-      const params = this.$route.params
-      if (params.id) {
-        return 'put'
-      } else {
-        return 'post'
-      }
+      url: '/api/v1/publish/publish/'
     }
   }
 }
 </script>
 
-<style lang="less" scoped>
-
+<style>
 </style>

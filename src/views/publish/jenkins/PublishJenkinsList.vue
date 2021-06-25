@@ -1,5 +1,5 @@
 <template>
-  <GenericListPage ref="GenericListTable" :table-config="tableConfig" :header-actions="headerActions" />
+  <GenericListPage :table-config="tableConfig" :header-actions="headerActions" />
 </template>
 
 <script>
@@ -10,10 +10,9 @@ export default {
     GenericListPage
   },
   data() {
-    const vm = this
     return {
       tableConfig: {
-        url: '/api/v1/applications/applications/?category=db',
+        url: '/api/v1/publish/publish/',
         columns: [
           'name', 'git_repos', 'jenkins_job', 'test_ip', 'pre_ip',
           'created_by', 'date_created', 'date_updated', 'comment', 'org_name', 'actions'
@@ -23,42 +22,25 @@ export default {
           default: ['name', 'git_repos', 'jenkins_job', 'test_ip', 'pre_ip', 'comment', 'actions']
         },
         columnsMeta: {
-          'name': {
+          name: {
+            formatter: null,
             width: '100px'
           },
-          'git_repos': {
+          git_repos: {
             label: this.$t('publish.GitRepos'),
             width: '450px'
           },
-          'jenkins_job': {
+          jenkins_job: {
             label: this.$t('publish.JenkinsJob'),
             width: '140px'
           },
-          'test_ip': {
+          test_ip: {
             label: this.$t('publish.TestIP'),
             width: '150px'
           },
-          'pre_ip': {
+          pre_ip: {
             label: this.$t('publish.PreIP'),
             width: '150px'
-          },
-          actions: {
-            prop: 'actions',
-            formatterArgs: {
-              onClone: ({ row }) => {
-                vm.$router.push({ name: 'PublishJenkinsCreate', query: { type: row.type, clone_from: row.id }})
-              },
-              performDelete: function({ row, col, cellValue, reload }) {
-                this.$axios.delete(
-                  `/api/v1/applications/applications/${row.id}/`
-                ).then(res => {
-                  this.$refs.GenericListTable.$refs.ListTable.$refs.ListTable.reloadTable()
-                  // this.$message.success(this.$t('common.deleteSuccessMsg'))
-                }).catch(error => {
-                  this.$message.error(this.$t('common.deleteErrorMsg') + ' ' + error)
-                })
-              }.bind(this)
-            }
           }
         }
       },
