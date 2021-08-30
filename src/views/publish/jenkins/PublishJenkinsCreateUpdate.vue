@@ -34,7 +34,7 @@ export default {
           label: this.$t('publish.PreIP')
         }
       },
-      url: '/api/v1/publish/publish/'
+      url: '/api/v1/publish/jenkins/'
     }
   }
 }

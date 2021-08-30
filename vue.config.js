@@ -52,22 +52,22 @@ module.exports = {
         changeOrigin: true
       },
       '/ws/': {
-        target: 'ws://127.0.0.1:8080',
+        target: 'ws://192.168.135.219',
         changeOrigin: true,
         ws: true
       },
       '/koko/': {
-        target: 'http://127.0.0.1:5000',
+        target: 'http://192.168.135.219',
         changeOrigin: true,
         ws: true
       },
       '/guacamole/': {
-        target: 'http://127.0.0.1:8081',
+        target: 'http://192.168.135.219',
         changeOrigin: true,
         ws: true
       },
       '/luna/': {
-        target: 'http://127.0.0.1:4200/luna/',
+        target: 'http://192.168.135.219/luna/',
         changeOrigin: true
       },
       '^/(core|static|media)/': {

@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       tableConfig: {
-        url: '/api/v1/publish/publish/',
+        url: '/api/v1/publish/jenkins/',
         columns: [
           'name', 'git_repos', 'jenkins_job', 'test_ip', 'pre_ip',
           'created_by', 'date_created', 'date_updated', 'comment', 'org_name', 'actions'
